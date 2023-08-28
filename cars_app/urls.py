@@ -5,8 +5,8 @@ from cars_app import views
 
 
 router =  DefaultRouter()
-router.register(r'cat',views.VehicleViewSet,basename="vehicles")
-router.register(r'cat',views.CategoryViewSet,basename="categories")
+router.register(r'cars',views.VehicleViewSet)
+router.register(r'cat',views.CategoryViewSet)
 
 
 
