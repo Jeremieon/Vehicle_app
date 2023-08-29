@@ -21,7 +21,7 @@ from django.views.generic import TemplateView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api',include('cars_app.urls')),
+    path('api/',include('cars_app.urls')),
     path('openapi/',get_schema_view(
         title="Vehicles List and categories",
         description="OpenApi Compliant application Listing Vehicale according to their categories just for demo Purposes"
