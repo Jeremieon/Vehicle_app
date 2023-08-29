@@ -16,8 +16,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
+from rest_framework.schemas import get_schema_view
+from django.views.generic import TemplateView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',include('cars_app.urls'))
+    path('api',include('cars_app.urls')),
+    path('openapi/',get_schema_view(
+        title="Vehicles List and categories",
+        description="OpenApi Compliant application Listing Vehicale according to their categories just for demo Purposes"
+    ), name = 'openapi-schema'),
+    path('swagger-ui/',TemplateView.as_view(
+        template_name = 'swagger-ui.html',
+        extra_context={'schema_url': 'openapi-schema'}
+    ),name='swagger-ui')
 ]
