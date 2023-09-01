@@ -10,5 +10,4 @@ class VehicleSerializer(serializers.ModelSerializer):
     category = serializers.ReadOnlyField(source='category.name')
     class Meta:
         model = Vehicle
-        fields = ['id','make','model','year','category','price_usd','country_made','wheels','horsepower','weight','color','fuel_type']
-
+        fields = '__all__'
