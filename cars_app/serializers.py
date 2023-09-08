@@ -4,7 +4,7 @@ from .models import Vehicle,Category
 class CategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = Category
-        fields = ['id','name']
+        fields = '__all__'
 
 class VehicleSerializer(serializers.ModelSerializer):
     category = serializers.ReadOnlyField(source='category.name')
